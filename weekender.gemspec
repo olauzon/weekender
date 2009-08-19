@@ -19,8 +19,7 @@ Gem::Specification.new do |s|
     "lib/weekender.rb",
     "lib/weekender/view_helpers.rb",
     "lib/weekender/weekender.rb",
-    "spec/fixtures/default_table.html",
-    "spec/fixtures/table_with_events.html",
+    "spec/fixtures/weekender.html",
     "spec/spec_helper.rb",
     "spec/weekender_spec.rb"
   ]
