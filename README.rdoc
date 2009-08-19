@@ -1,0 +1,37 @@
+= weekender
+
+A simple Ruby library for creating calendars based on weeks rather than months.
+
+
+== Installation
+
+    $ sudo gem sources -a http://gems.github.com
+    $ sudo gem install olauzon-weekender
+
+
+== Usage
+
+    >> weekender = Weekender.new( :year       => Date.today.year,
+                                   :month      => Date.today.month,
+                                   :day        => Date.today.day,
+                                   :before     => 3,   # number of weeks to display before
+                                   :after      => 4)   # number of weeks to display after
+    => Returns a Weekender instance
+
+    >> weekender.add_event(Date.today,
+                           :html_class => 'special_event',
+                           :content    => '<p>special event 1</p>')
+    => Returns weekender with an event (you can add as many events as necessary)
+
+    >> weekender.display
+    => Outputs HTML calendar
+
+
+== Inspiration
+
+* nakajima's Calendar Maker http://github.com/nakajima/calendar-maker
+
+
+== Copyright
+
+Copyright (c) 2009 Olivier Lauzon. See LICENSE for details.
