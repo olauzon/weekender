@@ -55,7 +55,10 @@ private
   def day_cell(week, day)
     date = date_on(week, day)
     output = '<td>'
-    output << '<a href="#" class="weekender_date">'
+    output << '<a href="#" class="weekender_date'
+    output << ' weekender_event' if event_on?(date.to_s)
+    output << html_classes_on(date.to_s)
+    output << '">'
     output << date.strftime(date_format)
     output << '</a>'
     output << content_on(date.to_s)
