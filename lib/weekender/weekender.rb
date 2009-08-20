@@ -21,15 +21,15 @@ class Weekender
                 :events
 
   def initialize(options={})
-    @year       = options[:year]      || Date.today.year
-    @month      = options[:month]     || Date.today.month
-    @day        = options[:day]       || Date.today.day
-    @year_end   = options[:year_end]  || year
-    @month_end  = options[:month_end] || month
-    @day_end    = options[:day_end]   || day
-    @before     = options[:before]    || 0
-    @after      = options[:after]     || 0
-    @events     = options[:events]    || []
+    @year       = (options[:year]       || Date.today.year ).to_i
+    @month      = (options[:month]      || Date.today.month).to_i
+    @day        = (options[:day]        || Date.today.day  ).to_i
+    @year_end   = (options[:year_end]   || year            ).to_i
+    @month_end  = (options[:month_end]  || month           ).to_i
+    @day_end    = (options[:day_end]    || day             ).to_i
+    @before     = (options[:before]     || 0               ).to_i
+    @after      = (options[:after]      || 0               ).to_i
+    @events     = options[:events]      || []
   end
 
   def weeks
