@@ -6,7 +6,7 @@ require 'lib/weekender'
 get '/' do
   @weekender = Weekender.new(params[:options] || '')
   haml "
-%h1.title weekender
+%h1.title Weekender
 %p This example shows a limited set of options.
 %div.options
   %form{:method => 'get', :action => '/'}

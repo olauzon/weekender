@@ -1,4 +1,4 @@
-= weekender
+= Weekender
 
 A simple Ruby library for creating calendars based on weeks rather than months.
 
@@ -35,4 +35,4 @@ View examples at http://weekender.heroku.com/
 
 == Copyright
 
-Copyright (c) 2009 Olivier Lauzon. See LICENSE for details.
+Copyright (c) 2009 Olivier Lauzon. See MIT-LICENSE for details.
