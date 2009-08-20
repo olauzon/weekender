@@ -26,6 +26,7 @@ A simple Ruby library for creating calendars based on weeks rather than months.
     >> weekender.display
     => Outputs HTML calendar
 
+    View examples at http://weekender.heroku.com/
 
 == Inspiration
 
