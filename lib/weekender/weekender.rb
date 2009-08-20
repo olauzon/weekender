@@ -65,11 +65,7 @@ class Weekender
   end
 
   def event_on?(date)
-    if events.empty?
-      false
-    else
-      events_dates.include?(date)
-    end
+    events_dates.include?(date)
   end
 
   def events_dates
@@ -77,28 +73,17 @@ class Weekender
   end
 
   def events_on(date)
-    if event_on?(date)
-      events.select { |event| event[0] == date }
-    else
-      []
-    end
+    events.select { |event| event[0] == date }
   end
 
   def content_on(date)
-    content = ''
-    events_on(date).each do |event|
-      content << event[1][:content]
-    end
-    content
+    events_on(date).reject { |event| event[1][:content].nil? }.
+      map { |event| event[1][:content] }.join('')
   end
 
   def html_classes_on(date)
-    classes = ''
-    events_on(date).each do |event|
-      classes << ' ' unless classes == ''
-      classes << event[1][:html_class]
-    end
-    classes
+    events_on(date).reject { |event| event[1][:html_class].nil? }.
+      map { |event| event[1][:html_class] }.join(' ')
   end
 
   def previous
@@ -120,8 +105,6 @@ class Weekender
       :after  => after
     )
   end
-
-# private
 
   def date
     Date.new(year, month, day)
