@@ -19,9 +19,15 @@ get '/' do
         %label{:for => id}= label
         %br
         %input{:type => 'text', :name => name, :id => id, :value => value}
+    - date_format = params[:date_format] || '%Y-%m-%d'
+    %p
+      %label{:for => 'date_format'} date format
+      %br
+      %input{:type => 'text', :name => 'date_format', :id => 'date_format', :value => date_format}
+
     %p
       %input{:type => 'submit', :value => 'submit'}
-    %div.weekender= @weekender.display
+    %div.weekender= @weekender.display(:date_format => date_format)
 "
 end
 
